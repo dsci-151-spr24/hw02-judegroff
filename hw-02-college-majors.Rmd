@@ -308,8 +308,25 @@ college_recent_grads %>%
 
 9.  Create a scatterplot of median income vs. proportion of women in that major, coloured by whether the major is in a STEM field or not. Describe the association between these three variables.
 
+```{r}
+ggplot(college_recent_grads, aes(x = sharewomen, y = median, color = major_type)) +
+  geom_point()
+```
+This scatterplot displays the relationship between the share of women in a major and median income, differentiated by STEM and non-STEM fields.
+
 ## Further exploration
 
 10. Ask a question of interest to you, and answer it using summary statistic(s) and/or visualization(s).
+
+How many people earn in the lowest and the highest of the 25th percentile, and what do they earn?
+
+```{r}
+ggplot(college_recent_grads, aes(x = p25th, y = median)) +
+  geom_point() +
+  labs(title = "",
+       y = "",
+       x = "25th Percentile Earnings")
+```
+
 
 🧶 ✅ ⬆️ Knit, *commit, and push your changes to GitHub with an appropriate commit message. Make sure to commit and push all changed files so that your Git pane is cleared up afterwards and review the md document on GitHub to make sure you're happy with the final state of your work.*
